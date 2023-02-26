@@ -1,5 +1,6 @@
 import express, { json } from 'express';
 import cors from 'cors';
+import router from '../routes';
 
 class Server {
     constructor() {
@@ -20,13 +21,13 @@ class Server {
     }
 
     routes() {
-        this.app.use( this.indexPath, require('../routes'));
+        this.app.use( this.indexPath, router('../routes/index'));
     }
 
     listen() {
         this.app.listen( this.port, () => {
             console.log(`App listening on port ${ this.port }!`)
-          });
+        });
     }
 }
 

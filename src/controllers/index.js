@@ -1,7 +1,7 @@
 import { response } from 'express'
 
 const getInfo = (req, res = response) => {
-    res.send('Alirio Mieres')
+    res.send('Ivette Soto')
   }
 
   export default {
