@@ -1,5 +1,5 @@
-const express = require('express');
-const cors = require('cors');
+import express, { json } from 'express';
+import cors from 'cors';
 
 class Server {
     constructor() {
@@ -16,7 +16,7 @@ class Server {
 
     middlewares() {
         this.app.use( cors() );
-        this.app.use( express.json() );
+        this.app.use( json() );
     }
 
     routes() {
@@ -30,4 +30,4 @@ class Server {
     }
 }
 
-module.exports = Server;
+export default Server;
