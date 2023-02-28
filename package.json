@@ -2,14 +2,18 @@
   "name": "cse341-node",
   "version": "1.0.0",
   "description": "individual assigment",
-  "main": "index.js",
-  "type": "module",
+  "main": "server.js",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/controllers/index.js"
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gfatima/cse341-node.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ivette Soto",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
