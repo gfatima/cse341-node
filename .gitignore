@@ -1,3 +1,6 @@
 node_modules
 .env
+.env.example
 week01-a/views
+week01-b/team
+week01-b/personal/app/models
