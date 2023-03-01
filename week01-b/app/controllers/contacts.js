@@ -4,6 +4,7 @@ const ObjectId = require('mongodb').ObjectId;
 const getAll = async (req, res) => {
     
     const result = await mongodb.getDb().db("Contacts").collection('contacts').find();
+    console.log(result);
     result.toArray().then((lists) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(lists);

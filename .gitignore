@@ -3,4 +3,4 @@ node_modules
 .env.example
 week01-a/views
 week01-b/team
-week01-b/personal/app/models
+week01-b/app/models
