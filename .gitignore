@@ -1,9 +1,7 @@
-cse341-node/node_modules
+node_modules
 .env
 .env.example
 week01-a/views
-week01-b/team
-week01-b/models
-cse341-node/node_modules
 teamWork
-
+week01-b/models
+week01-b/node_modules
