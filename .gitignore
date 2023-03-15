@@ -1,6 +1,5 @@
 node_modules
 .env
-.env.example
 week01-a/views
 teamWork
 week01-b/models
