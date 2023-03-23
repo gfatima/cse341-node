@@ -1,0 +1,23 @@
+{
+    "contact": {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "email": "harryPotter@test.com",
+        "favoriteColor": "While",
+        "birthday": "31/07/1980"
+    },
+    "contact2": {
+        "firstName": "Newt",
+        "lastName": "Scamander",
+        "email": "n_Scamander@test.com",
+        "favoriteColor": "Black",
+        "birthday": "24/02/1897"
+    },
+    "contact3": {
+        "firstName": "Credence",
+        "lastName": "Barebone",
+        "email": "BareboneKing@test.com",
+        "favoriteColor": "Orange",
+        "birthday": "25/12/1901"
+    }
+}
