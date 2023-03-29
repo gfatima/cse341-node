@@ -1,0 +1,145 @@
+// LOCALHOST   
+###  Get all products 
+GET http://localhost:8080/ HTTP/1.1
+
+### Get products by id
+GET http://localhost:8080/products
+
+### Get kits by id
+GET http://localhost:8080/kit
+### 
+GET http://localhost:8080/products/641d1eb0b2f7f6e188cd9b21
+### 
+GET http://localhost:8080/kits/641d1f47b2f7f6e188ce4240
+###
+GET http://localhost:8080/products/641d20dbb2f7f6e188cfe2ee
+
+### Create products 
+POST http://localhost:8080/products HTTP/1.1
+content-type:application/json
+
+{
+    "Name": "Gel Alcohol 80%",
+    "Price": 7.77,
+    "Type": "Fluid",
+    "Count": "16 Fl Oz",
+    "Description": " Alcohol Antiseptic 80% Topical Solution Hand Sanitizer",
+    "Category": "Medicine"
+}
+
+### Create kits 
+POST http://localhost:8080/kit HTTP/1.1
+content-type:application/json
+
+{
+    "FourPerson": {
+    "Name": "Four Person",
+    "Content": {
+        "products": [
+        {
+            "Lot": 15,
+            "Name": "Paracetamol"
+        },
+        {
+            "Lot": 15,
+            "Name": "Ibuprofen"
+        },
+        {
+            "Lot": 6,
+            "Name": "Bandages Medical"
+        },
+        {
+            "Lot": 1,
+            "Name": "Isopropyl Alcohol 70%"
+        },
+        {
+            "Lot": 2,
+            "Name": "Diclofenac Gel 1%"
+        },
+        {
+            "Lot": 2,
+            "Name": "KN95 Face Masks"
+            
+        },
+        {
+            "Lot": 4,
+            "Name": "Adhesive Tape Medical"
+        },
+        {
+            "Lot": 10,
+            "Name": "Canned tuna in oil"
+        },
+        {
+            "Lot": 6,
+            "Name": "Cookies"
+        },
+        {
+            "Lot": 4,
+            "Name": "Chocolates"
+        },
+        {
+            "Lot": 8,
+            "Name": "Legumes"
+        },
+        {
+            "Lot": 4,
+            "Name": "Warm Clothing"
+        },
+        {
+            "Lot": 4,
+            "Name": "Blankets"
+        },
+        {
+            "Lot": 4,
+            "Name": "Hat and Gloves Set"
+        },
+        {
+            "Lot": 4,
+            "Name": "Water bottles"
+        },
+        {
+            "Lot": 1,
+            "Name": "Battery Operated Radio"
+        },
+        {
+            "Lot": 1,
+            "Name": "Portable Charger"
+        },
+        {
+            "Lot": 2,
+            "Name": "Lanterns"
+        },
+        {
+            "Lot": 2,
+            "Name": "Wet Toilet Wipes"
+        },
+        {
+            "Lot": 2,
+            "Name": "Toilet Paper"
+        },
+        {
+            "Lot": 3,
+            "Name": "Backpack"
+        }
+        ]
+    },
+    "TotalPrice": 1749.17
+    }
+}
+
+### PUT contact 
+PUT http://localhost:8080/products/642235c1b5360d9eeeba6375  HTTP/1.1
+content-type: application/json
+
+{
+    "Name": "Gel Alcohol 70%",
+    "Price": 3.77,
+    "Type": "Fluid",
+    "Count": "8 Fl Oz",
+    "Description": " Alcohol Antiseptic 80% Topical Solution Hand Sanitizer",
+    "Category": "Medicine"
+}
+
+### DELETE contact 
+
+DELETE http://localhost:8080/products/642235c1b5360d9eeeba6375 HTTP/1.1

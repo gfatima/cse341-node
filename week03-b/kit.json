@@ -1,0 +1,187 @@
+{
+  "OnePerson": {
+    "Name": "One Person",
+    "Content": {
+      "products": [
+        {
+          "Lot": 5,
+          "Name": "Paracetamol"
+        },
+        {
+          "Lot": 5,
+          "Name": "Ibuprofen"
+        },
+        {
+          "Lot": 2,
+          "Name": "Bandages Medical"
+        },
+        {
+          "Lot": 1,
+          "Name": "Isopropyl Alcohol 70%"
+        },
+        {
+          "Lot": 1,
+          "Name": "Diclofenac Gel 1%"
+        },
+        {
+          "Lot": 1,
+          "Name": "KN95 Face Masks"
+        },
+        {
+          "Lot": 1,
+          "Name": "Adhesive Tape Medical"
+        },
+        {
+          "Lot": 3,
+          "Name": "Canned tuna in oil"
+        },
+        {
+          "Lot": 1,
+          "Name": "Cookies"
+        },
+        {
+          "Lot": 1,
+          "Name": "Chocolates"
+        },
+        {
+          "Lot": 2,
+          "Name": "Legumes"
+        },
+        {
+          "Lot": 1,
+          "Name": "Warm Clothing"
+        },
+        {
+          "Lot": 1,
+          "Name": "Blankets"
+        },
+        {
+          "Lot": 1,
+          "Name": "Hat and Gloves Set"
+        },
+        {
+          "Lot": 1,
+          "Name": "Water bottles"
+        },
+        {
+          "Lot": 1,
+          "Name": "Battery Operated Radio"
+        },
+        {
+          "Lot": 1,
+          "Name": "Portable Charger"
+        },
+        {
+          "Lot": 1,
+          "Name": "Lanterns"
+        },
+        {
+          "Lot": 1,
+          "Name": "Wet Toilet Wipes"
+        },
+        {
+          "Lot": 1,
+          "Name": "Toilet Paper"
+        },
+        {
+          "Lot": 1,
+          "Name": "Backpack"
+        }
+      ]
+    },
+    "TotalPrice": 538.75
+  },
+  "TwoPerson": {
+    "Name": "Two Person",
+    "Content": {
+      "products": [
+        {
+          "Lot": 10,
+          "Name": "Paracetamol"
+        },
+        {
+          "Lot": 10,
+          "Name": "Ibuprofen"
+        },
+        {
+          "Lot": 4,
+          "Name": "Bandages Medical"
+        },
+        {
+          "Lot": 1,
+          "Name": "Isopropyl Alcohol 70%"
+        },
+        {
+          "Lot": 1,
+          "Name": "Diclofenac Gel 1%"
+        },
+        {
+          "Lot": 1,
+          "Name": "KN95 Face Masks",
+          "Price": 19.99
+        },
+        {
+          "Lot": 2,
+          "Name": "Adhesive Tape Medical"
+        },
+        {
+          "Lot": 6,
+          "Name": "Canned tuna in oil"
+        },
+        {
+          "Lot": 2,
+          "Name": "Cookies"
+        },
+        {
+          "Lot": 2,
+          "Name": "Chocolates"
+        },
+        {
+          "Lot": 4,
+          "Name": "Legumes"
+        },
+        {
+          "Lot": 2,
+          "Name": "Warm Clothing"
+        },
+        {
+          "Lot": 2,
+          "Name": "Blankets"
+        },
+        {
+          "Lot": 2,
+          "Name": "Hat and Gloves Set"
+        },
+        {
+          "Lot": 2,
+          "Name": "Water bottles"
+        },
+        {
+          "Lot": 1,
+          "Name": "Battery Operated Radio"
+        },
+        {
+          "Lot": 1,
+          "Name": "Portable Charger"
+        },
+        {
+          "Lot": 1,
+          "Name": "Lanterns"
+        },
+        {
+          "Lot": 1,
+          "Name": "Wet Toilet Wipes"
+        },
+        {
+          "Lot": 2,
+          "Name": "Toilet Paper"
+        },
+        {
+          "Lot": 2,
+          "Name": "Backpack"
+        }
+      ]
+    },
+    "TotalPrice": 936.88
+  }
+}
