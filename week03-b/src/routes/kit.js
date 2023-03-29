@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const KitController = require('../controllers/Kit')
+const KitController = require('../controllers/kit')
 
 router.get('/', KitController.getAllKit)
 
