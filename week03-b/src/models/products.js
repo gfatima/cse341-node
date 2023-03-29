@@ -19,7 +19,7 @@ module.exports = (mongoose) => {
       type: String
 
     }
-  })
+  }, { versionKey: false, autoIndex: false })
 
-  return mongoose.model('product', userSchema)
+  return mongoose.model('products', userSchema)
 }

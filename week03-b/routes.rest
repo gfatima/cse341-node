@@ -19,7 +19,7 @@ POST http://localhost:8080/products HTTP/1.1
 content-type:application/json
 
 {
-    "Name": "Gel Alcohol 80%",
+    "Name": "Gel Alcohol 180%",
     "Price": 7.77,
     "Type": "Fluid",
     "Count": "16 Fl Oz",
@@ -32,100 +32,98 @@ POST http://localhost:8080/kit HTTP/1.1
 content-type:application/json
 
 {
-    "FourPerson": {
-    "Name": "Four Person",
-    "Content": {
-        "products": [
-        {
-            "Lot": 15,
-            "Name": "Paracetamol"
-        },
-        {
-            "Lot": 15,
-            "Name": "Ibuprofen"
-        },
-        {
-            "Lot": 6,
-            "Name": "Bandages Medical"
-        },
-        {
-            "Lot": 1,
-            "Name": "Isopropyl Alcohol 70%"
-        },
-        {
-            "Lot": 2,
-            "Name": "Diclofenac Gel 1%"
-        },
-        {
-            "Lot": 2,
-            "Name": "KN95 Face Masks"
-            
-        },
-        {
-            "Lot": 4,
-            "Name": "Adhesive Tape Medical"
-        },
-        {
-            "Lot": 10,
-            "Name": "Canned tuna in oil"
-        },
-        {
-            "Lot": 6,
-            "Name": "Cookies"
-        },
-        {
-            "Lot": 4,
-            "Name": "Chocolates"
-        },
-        {
-            "Lot": 8,
-            "Name": "Legumes"
-        },
-        {
-            "Lot": 4,
-            "Name": "Warm Clothing"
-        },
-        {
-            "Lot": 4,
-            "Name": "Blankets"
-        },
-        {
-            "Lot": 4,
-            "Name": "Hat and Gloves Set"
-        },
-        {
-            "Lot": 4,
-            "Name": "Water bottles"
-        },
-        {
-            "Lot": 1,
-            "Name": "Battery Operated Radio"
-        },
-        {
-            "Lot": 1,
-            "Name": "Portable Charger"
-        },
-        {
-            "Lot": 2,
-            "Name": "Lanterns"
-        },
-        {
-            "Lot": 2,
-            "Name": "Wet Toilet Wipes"
-        },
-        {
-            "Lot": 2,
-            "Name": "Toilet Paper"
-        },
-        {
-            "Lot": 3,
-            "Name": "Backpack"
-        }
-        ]
-    },
-    "TotalPrice": 1749.17
-    }
+
+	"Name": "Four Person",
+	"Content": {
+		"products": [{
+				"Lot": 15,
+				"Name": "Paracetamol"
+			},
+			{
+				"Lot": 15,
+				"Name": "Ibuprofen"
+			},
+			{
+				"Lot": 6,
+				"Name": "Bandages Medical"
+			},
+			{
+				"Lot": 1,
+				"Name": "Isopropyl Alcohol 70%"
+			},
+			{
+				"Lot": 2,
+				"Name": "Diclofenac Gel 1%"
+			},
+			{
+				"Lot": 2,
+				"Name": "KN95 Face Masks"
+			},
+			{
+				"Lot": 4,
+				"Name": "Adhesive Tape Medical"
+			},
+			{
+				"Lot": 10,
+				"Name": "Canned tuna in oil"
+			},
+			{
+				"Lot": 6,
+				"Name": "Cookies"
+			},
+			{
+				"Lot": 4,
+				"Name": "Chocolates"
+			},
+			{
+				"Lot": 8,
+				"Name": "Legumes"
+			},
+			{
+				"Lot": 4,
+				"Name": "Warm Clothing"
+			},
+			{
+				"Lot": 4,
+				"Name": "Blankets"
+			},
+			{
+				"Lot": 4,
+				"Name": "Hat and Gloves Set"
+			},
+			{
+				"Lot": 4,
+				"Name": "Water bottles"
+			},
+			{
+				"Lot": 1,
+				"Name": "Battery Operated Radio"
+			},
+			{
+				"Lot": 1,
+				"Name": "Portable Charger"
+			},
+			{
+				"Lot": 2,
+				"Name": "Lanterns"
+			},
+			{
+				"Lot": 2,
+				"Name": "Wet Toilet Wipes"
+			},
+			{
+				"Lot": 2,
+				"Name": "Toilet Paper"
+			},
+			{
+				"Lot": 3,
+				"Name": "Backpack"
+			}
+		]
+	},
+	"KitPrice": 1749.17
 }
+
 
 ### PUT contact 
 PUT http://localhost:8080/products/642235c1b5360d9eeeba6375  HTTP/1.1

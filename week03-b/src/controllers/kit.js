@@ -64,7 +64,7 @@ module.exports.updateKit = async (req, res) => {
           Name: req.params.Name
         }
       ]
-      Kit.Price = req.body.Price
+      Kit.KitPrice = req.body.KitPrice
       Kit.save(function (err) {
         if (err) {
           res.status(500).json(err || 'Some error occurred while updating the Kir Name.')

@@ -2,7 +2,7 @@
   "OnePerson": {
     "Name": "One Person",
     "Content": {
-      "products": [
+      "product": [
         {
           "Lot": 5,
           "Name": "Paracetamol"

@@ -3,16 +3,98 @@ module.exports = (mongoose) => {
     Name: {
       type: String
     },
-    Content: [
-      {
-        Lot: Number,
-        Name: String
-      }
-    ],
-    Price: {
-      Type: Number
+    Content: {
+      products: [
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        },
+        {
+          Lot: Number,
+          Name: String
+        }
+      ]
+    },
+    KitPrice: {
+      type: Number
     }
-  })
+  }, { versionKey: false, autoIndex: false })
 
-  return mongoose.model('kit', userSchema)
+  return mongoose.model('kits', userSchema)
 }
