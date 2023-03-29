@@ -201,7 +201,7 @@
                 "Content": {
                   "example": "any"
                 },
-                "Price": {
+                "KitPrice": {
                   "example": "any"
                 }
               }
