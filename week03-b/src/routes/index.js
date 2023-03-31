@@ -5,6 +5,6 @@ router.get('/', require('./products'))
 router.get('/', require('./kit'))
 router.use('/', require('./swagger'))
 router.use('/products', require('./products'))
-router.use('/kits', require('./kit'))
+router.use('/kit', require('./kit'))
 
 module.exports = router

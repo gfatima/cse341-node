@@ -62,78 +62,6 @@ module.exports.createKit = async (req, res) => {
                 $Lot: 2,
                 Name: "Bandages Medical"
               },
-              {
-                $Lot: 1,
-                $Name: "Isopropyl Alcohol 70%"
-              },
-              {
-                $Lot: 1,
-                $Name: "Diclofenac Gel 1%"
-              },
-              {
-                $Lot: 1,
-                $Name: "KN95 Face Masks"
-              },
-              {
-                $Lot: 1,
-                $Name: "Adhesive Tape Medical"
-              },
-              {
-                $Lot: 3,
-                $Name: "Canned tuna in oil"
-              },
-              {
-                $Lot: 1,
-                $Name: "Cookies"
-              },
-              {
-                $Lot: 1,
-                $Name: "Chocolates"
-              },
-              {
-                $Lot: 2,
-                $Name": "Legumes"
-              },
-              {
-                $Lot: 1,
-                $Name: "Warm Clothing"
-              },
-              {
-                $Lot: 1,
-                $Name: "Blankets"
-              },
-              {
-                $Lot: 1,
-                $Name: "Hat and Gloves Set"
-              },
-              {
-                $Lot: 1,
-                $Name: "Water bottles"
-              },
-              {
-                $Lot: 1,
-                $Name: "Battery Operated Radio"
-              },
-              {
-                $Lot: 1,
-                $Name: "Portable Charger"
-              },
-              {
-                $Lot: 1,
-                $Name: "Lanterns"
-              },
-              {
-                $Lot: 1,
-                $Name: "Wet Toilet Wipes"
-              },
-              {
-                $Lot: 1,
-                $Name: "Toilet Paper"
-              },
-              {
-                $Lot: 1,
-                $Name: "Backpack"
-              }
             ]
           },
           $TotalPrice: 538.75
@@ -182,108 +110,13 @@ module.exports.updateKit = async (req, res) => {
                 Name: "Bandages Medical"
               },
               {
-                $Lot: 1,
-                $Name: "Isopropyl Alcohol 70%"
-              },
-              {
-                $Lot: 1,
-                $Name: "Diclofenac Gel 1%"
-              },
-              {
-                $Lot: 1,
-                $Name: "KN95 Face Masks"
-              },
-              {
-                $Lot: 1,
-                $Name: "Adhesive Tape Medical"
-              },
-              {
-                $Lot: 3,
-                $Name: "Canned tuna in oil"
-              },
-              {
-                $Lot: 1,
-                $Name: "Cookies"
-              },
-              {
-                $Lot: 1,
-                $Name: "Chocolates"
-              },
-              {
-                $Lot: 2,
-                $Name: "Legumes"
-              },
-              {
-                $Lot: 1,
-                $Name: "Warm Clothing"
-              },
-              {
-                $Lot: 1,
-                $Name: "Blankets"
-              },
-              {
-                $Lot: 1,
-                $Name: "Hat and Gloves Set"
-              },
-              {
-                $Lot: 1,
-                $Name: "Water bottles"
-              },
-              {
-                $Lot: 1,
-                $Name: "Battery Operated Radio"
-              },
-              {
-                $Lot: 1,
-                $Name: "Portable Charger"
-              },
-              {
-                $Lot: 1,
-                $Name: "Lanterns"
-              },
-              {
-                $Lot: 1,
-                $Name: "Wet Toilet Wipes"
-              },
-              {
-                $Lot: 1,
-                $Name: "Toilet Paper"
-              },
-              {
-                $Lot: 1,
-                $Name: "Backpack"
-              }
             ]
           },
           $TotalPrice: 538.75
         }
       }
   */
-  const Name = req.params.Name
   try {
-    Kit.findOne({ Name }, function (_err, Kit) {
-      Kit.Name = req.params.Name
-      Kit.Content = req.body.Content[
-        {
-          Lot: req.params.Lot,
-          Name: req.params.Name
-        }
-      ]
-      Kit.KitPrice = req.body.KitPrice
-      Kit.save(function (err) {
-        if (err) {
-          res.status(500).json(err || 'Some error occurred while updating the Kir Name.')
-        } else {
-          res.status(204).send()
-        }
-      })
-    })
-  } catch (err) {
-    res.status(500).json(err)
-  }
-
-  try {
-    const Name = req.params.Name
     const kit = {
       Name: req.body.Name,
       Content: {
@@ -376,7 +209,7 @@ module.exports.updateKit = async (req, res) => {
       },
       TotalPrice: req.body.TotalPrice
     }
-    const response = await Kit.replaceOne({ Name }, kit)
+    const response = await Kit.replaceOne(kit)
     console.log(response)
   } catch (err) {
     console.log(err)
@@ -392,98 +225,6 @@ module.exports.deleteKit = async (req, res) => {
       #swagger.parameters['obj'] = {
         in: 'body',
         description: 'Delete the product in the DB of the emergency backpack.',
-        schema: {
-          $Name: 'One Person',
-          $Content: {
-            $product: [
-              {
-                $Lot: 5,
-                $Name: "Paracetamol"
-              },
-              {
-                $Lot: 5,
-                $Name: "Ibuprofen"
-              },
-              {
-                $Lot: 2,
-                Name: "Bandages Medical"
-              },
-              {
-                $Lot: 1,
-                $Name: "Isopropyl Alcohol 70%"
-              },
-              {
-                $Lot: 1,
-                $Name: "Diclofenac Gel 1%"
-              },
-              {
-                $Lot: 1,
-                $Name: "KN95 Face Masks"
-              },
-              {
-                $Lot: 1,
-                $Name: "Adhesive Tape Medical"
-              },
-              {
-                $Lot: 3,
-                $Name: "Canned tuna in oil"
-              },
-              {
-                $Lot: 1,
-                $Name: "Cookies"
-              },
-              {
-                $Lot: 1,
-                $Name: "Chocolates"
-              },
-              {
-                $Lot: 2,
-                $Name: "Legumes"
-              },
-              {
-                $Lot: 1,
-                $Name: "Warm Clothing"
-              },
-              {
-                $Lot: 1,
-                $Name: "Blankets"
-              },
-              {
-                $Lot: 1,
-                $Name: "Hat and Gloves Set"
-              },
-              {
-                $Lot: 1,
-                $Name: "Water bottles"
-              },
-              {
-                $Lot: 1,
-                $Name: "Battery Operated Radio"
-              },
-              {
-                $Lot: 1,
-                $Name: "Portable Charger"
-              },
-              {
-                $Lot: 1,
-                $Name: "Lanterns"
-              },
-              {
-                $Lot: 1,
-                $Name: "Wet Toilet Wipes"
-              },
-              {
-                $Lot: 1,
-                $Name: "Toilet Paper"
-              },
-              {
-                $Lot: 1,
-                $Name: "Backpack"
-              }
-            ]
-          },
-          $TotalPrice: 538.75
-        }
       }
   */
   try {

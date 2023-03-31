@@ -9,6 +9,9 @@
   "servers": [
     {
       "url": "http://localhost:8080/"
+    },
+    {
+      "url": "https://localhost:8080/"
     }
   ],
   "tags": [
@@ -258,7 +261,7 @@
         }
       }
     },
-    "/kits/": {
+    "/kit/": {
       "get": {
         "tags": [
           "Product Kits"
@@ -279,11 +282,62 @@
           "Product Kits"
         ],
         "description": "Creates a list of product and store it in the database.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "The user account information to add to the database.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Name": {
+                  "type": "string",
+                  "example": "One Person"
+                },
+                "Content": {
+                  "type": "object",
+                  "properties": {
+                    "product": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "Lot": {
+                            "type": "number",
+                            "example": 2
+                          },
+                          "Name": {
+                            "type": "string",
+                            "example": "Bandages Medical"
+                          }
+                        },
+                        "required": [
+                          "Lot"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "product"
+                  ]
+                },
+                "TotalPrice": {
+                  "type": "number",
+                  "example": 538.75
+                }
+              },
+              "required": [
+                "Name",
+                "Content",
+                "TotalPrice"
+              ]
+            }
+          }
+        ],
         "responses": {}
       }
     },
-    "/kits/{id}": {
+    "/kit/{id}": {
       "get": {
         "tags": [
           "Product Kits"
@@ -319,60 +373,30 @@
             "type": "string"
           },
           {
-            "name": "obj",
+            "name": "body",
             "in": "body",
-            "description": "Update and save DB product list for the Emergency Backpack",
             "schema": {
               "type": "object",
               "properties": {
                 "Name": {
-                  "type": "string",
-                  "example": "One Person"
+                  "example": "any"
                 },
-                "Content": {
-                  "type": "object",
-                  "properties": {
-                    "product": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "Lot": {
-                            "type": "number",
-                            "example": 1
-                          },
-                          "Name": {
-                            "type": "string",
-                            "example": "Backpack"
-                          }
-                        },
-                        "required": [
-                          "Lot",
-                          "Name"
-                        ]
-                      }
-                    }
-                  },
-                  "required": [
-                    "product"
-                  ]
+                "Lot": {
+                  "example": "any"
                 },
                 "TotalPrice": {
-                  "type": "number",
-                  "example": 538.75
+                  "example": "any"
                 }
-              },
-              "required": [
-                "Name",
-                "Content",
-                "TotalPrice"
-              ]
+              }
             }
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "500": {
             "description": "Internal Server Error"
@@ -397,49 +421,7 @@
             "description": "Delete the product in the DB of the emergency backpack.",
             "schema": {
               "type": "object",
-              "properties": {
-                "Name": {
-                  "type": "string",
-                  "example": "One Person"
-                },
-                "Content": {
-                  "type": "object",
-                  "properties": {
-                    "product": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "Lot": {
-                            "type": "number",
-                            "example": 1
-                          },
-                          "Name": {
-                            "type": "string",
-                            "example": "Backpack"
-                          }
-                        },
-                        "required": [
-                          "Lot",
-                          "Name"
-                        ]
-                      }
-                    }
-                  },
-                  "required": [
-                    "product"
-                  ]
-                },
-                "TotalPrice": {
-                  "type": "number",
-                  "example": 538.75
-                }
-              },
-              "required": [
-                "Name",
-                "Content",
-                "TotalPrice"
-              ]
+              "properties": {}
             }
           }
         ],

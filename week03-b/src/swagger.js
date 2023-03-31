@@ -9,7 +9,8 @@ const doc = {
   host: 'localhost:8080',
   basePath: '/',
   schemes: [
-    'http'],
+    'http',
+    'https'],
   tags: [
     {
       name: 'Emergency Backpack'
