@@ -125,7 +125,7 @@ content-type:application/json
 }
 
 
-### PUT contact 
+### PUT 
 PUT http://localhost:8080/products/Gel HTTP/1.1
 content-type: application/json
 
@@ -138,6 +138,10 @@ content-type: application/json
     "Category": "Medicine"
 }
 
-### DELETE contact 
+### DELETE 
 
 DELETE http://localhost:8080/products/GelFluid HTTP/1.1
+
+### DELETE 
+
+DELETE http://localhost:8080/kit/FourPerson HTTP/1.1
