@@ -2,7 +2,7 @@ const db = require('../models')
 const Kit = db.kit
 
 module.exports.getAllKit = (req, res) => {
-  /*  #swagger.description = 'Creates a user account and stores it in the database. NOTE: Password and name will be authenticated using OpenIDConnect/Auth0. We will NOT store passwords in our database.'
+  /*  #swagger.description = 'Return a Kit of products'
       #swagger.tags = ['Product Kits']
   */
   try {
@@ -21,15 +21,15 @@ module.exports.getAllKit = (req, res) => {
 }
 
 module.exports.getSingleKit = (req, res) => {
-  /*  #swagger.description = 'Creates a user account and stores it in the database. NOTE: Password and name will be authenticated using OpenIDConnect/Auth0. We will NOT store passwords in our database.'
+  /*  #swagger.description = 'Return a Specific Kit of products.'
       #swagger.tags = ['Product Kits']
   */
   try {
-    const Name = req.params.Name
-    Kit.find({ Name })
+    const NameKit = req.params.NameKit
+    Kit.find({ NameKit })
       .then((data) => {
         res.status(200).send(data)
-        if (!Name) {
+        if (!NameKit) {
           res.status(400).send({ message: 'Invalid productId Supplied' })
         }
       })
@@ -120,9 +120,9 @@ module.exports.updateKit = async (req, res) => {
       }
   */
   try {
-    const Name = req.params.Name
+    const NameKit = req.params.NameKit
     const kit = {
-      Name: req.body.Name,
+      NameKit: req.body.NameKit,
       Content: {
         product: [
           {
@@ -213,7 +213,7 @@ module.exports.updateKit = async (req, res) => {
       },
       TotalPrice: req.body.TotalPrice
     }
-    if (!Name) {
+    if (!NameKit) {
       res.status(400).send({ message: 'Invalid productId Supplied' })
     }
     const response = await Kit.replaceOne(kit)
@@ -235,12 +235,12 @@ module.exports.deleteKit = async (req, res) => {
       }
   */
   try {
-    const Name = req.params.Name
-    if (!Name) {
+    const NameKit = req.params.NameKit
+    if (!NameKit) {
       res.status(400).send({ message: 'Invalid Kit Name Supplied' })
       return
     }
-    const response = await Kit.deleteOne({ Name })
+    const response = await Kit.deleteOne({ NameKit })
     if (response.deletedCount !== 0) {
       res.status(200).send(Kit + ' ' + 'has been deleted')
     }

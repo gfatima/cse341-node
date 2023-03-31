@@ -272,7 +272,7 @@
         "tags": [
           "Product Kits"
         ],
-        "description": "Creates a user account and stores it in the database. NOTE: Password and name will be authenticated using OpenIDConnect/Auth0. We will NOT store passwords in our database.",
+        "description": "Return a Kit of products",
         "parameters": [],
         "responses": {
           "200": {
@@ -348,7 +348,7 @@
         "tags": [
           "Product Kits"
         ],
-        "description": "Creates a user account and stores it in the database. NOTE: Password and name will be authenticated using OpenIDConnect/Auth0. We will NOT store passwords in our database.",
+        "description": "Return a Specific Kit of products.",
         "parameters": [
           {
             "name": "id",
@@ -387,10 +387,13 @@
             "schema": {
               "type": "object",
               "properties": {
-                "Name": {
+                "NameKit": {
                   "example": "any"
                 },
                 "Lot": {
+                  "example": "any"
+                },
+                "Name": {
                   "example": "any"
                 },
                 "TotalPrice": {
