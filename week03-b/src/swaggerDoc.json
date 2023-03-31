@@ -1,14 +1,20 @@
 {
   "swagger": "2.0",
+  "openapi": "2.0.0",
   "info": {
-    "title": "Emergency Backpack - API",
-    "description": "Product Kit to obtain an emergency backpack: API",
+    "title": "Emergency Backpack API",
+    "description": "Suggestions for getting an emergency backpack.",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
-  "basePath": "/",
-  "schemes": [
-    "http"
+  "servers": [
+    {
+      "url": "http://localhost:8080/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Emergency Backpack"
+    }
   ],
   "paths": {
     "/": {
@@ -27,7 +33,10 @@
     },
     "/products/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Products"
+        ],
+        "description": "Return a list of products for the Emergency Backpack.",
         "parameters": [],
         "responses": {
           "200": {
@@ -39,8 +48,54 @@
         }
       },
       "post": {
-        "description": "",
-        "parameters": [],
+        "tags": [
+          "Products"
+        ],
+        "description": "Create a product and store it in the database.",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "Create the product information for the emergency backpack and save them in the database.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Paracetamol"
+                },
+                "price": {
+                  "type": "number",
+                  "example": 1.5
+                },
+                "Count": {
+                  "type": "string",
+                  "example": "10 ct"
+                },
+                "Type": {
+                  "type": "string",
+                  "example": "Tablet"
+                },
+                "Description": {
+                  "type": "string",
+                  "example": "anti-pyratic"
+                },
+                "Category": {
+                  "type": "string",
+                  "example": "Medicine"
+                }
+              },
+              "required": [
+                "name",
+                "price",
+                "Count",
+                "Type",
+                "Description",
+                "Category"
+              ]
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -51,12 +106,15 @@
         }
       }
     },
-    "/products/{id}": {
+    "/products/{Name}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Products"
+        ],
+        "description": "Return a specific of products for the Emergency Backpack.",
         "parameters": [
           {
-            "name": "id",
+            "name": "Name",
             "in": "path",
             "required": true,
             "type": "string"
@@ -72,61 +130,124 @@
         }
       },
       "put": {
-        "description": "",
+        "tags": [
+          "Products"
+        ],
+        "description": "Update a product information and store it in the database.",
         "parameters": [
           {
-            "name": "id",
+            "name": "Name",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "body",
+            "name": "obj",
             "in": "body",
+            "description": "Update and save DB product information for the Emergency Backpack.",
             "schema": {
               "type": "object",
               "properties": {
-                "Price": {
-                  "example": "any"
+                "name": {
+                  "type": "string",
+                  "example": "Paracetamol"
+                },
+                "price": {
+                  "type": "number",
+                  "example": 1.5
                 },
                 "Count": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "10 ct"
                 },
                 "Type": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "Tablet"
                 },
                 "Description": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "anti-pyratic"
                 },
                 "Category": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "Medicine"
                 }
-              }
+              },
+              "required": [
+                "name",
+                "price",
+                "Count",
+                "Type",
+                "Description",
+                "Category"
+              ]
             }
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
-          },
           "500": {
             "description": "Internal Server Error"
           }
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Products"
+        ],
+        "description": "Delete a product in the database.",
         "parameters": [
           {
-            "name": "id",
+            "name": "Name",
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "Delete the product in the DB of the emergency backpack.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Paracetamol"
+                },
+                "price": {
+                  "type": "number",
+                  "example": 1.5
+                },
+                "Count": {
+                  "type": "string",
+                  "example": "10 ct"
+                },
+                "Type": {
+                  "type": "string",
+                  "example": "Tablet"
+                },
+                "Description": {
+                  "type": "string",
+                  "example": "anti-pyratic"
+                },
+                "Category": {
+                  "type": "string",
+                  "example": "Medicine"
+                }
+              },
+              "required": [
+                "name",
+                "price",
+                "Count",
+                "Type",
+                "Description",
+                "Category"
+              ]
+            }
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
+          "200": {
+            "description": "OK"
           },
           "400": {
             "description": "Bad Request"
@@ -137,9 +258,12 @@
         }
       }
     },
-    "/kit/": {
+    "/kits/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Product Kits"
+        ],
+        "description": "Creates a user account and stores it in the database. NOTE: Password and name will be authenticated using OpenIDConnect/Auth0. We will NOT store passwords in our database.",
         "parameters": [],
         "responses": {
           "200": {
@@ -151,21 +275,20 @@
         }
       },
       "post": {
-        "description": "",
+        "tags": [
+          "Product Kits"
+        ],
+        "description": "Creates a list of product and store it in the database.",
         "parameters": [],
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
+        "responses": {}
       }
     },
-    "/kit/{id}": {
+    "/kits/{id}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Product Kits"
+        ],
+        "description": "Creates a user account and stores it in the database. NOTE: Password and name will be authenticated using OpenIDConnect/Auth0. We will NOT store passwords in our database.",
         "parameters": [
           {
             "name": "id",
@@ -184,7 +307,10 @@
         }
       },
       "put": {
-        "description": "",
+        "tags": [
+          "Product Kits"
+        ],
+        "description": "Update a product list in the database Kits.",
         "parameters": [
           {
             "name": "id",
@@ -193,18 +319,54 @@
             "type": "string"
           },
           {
-            "name": "body",
+            "name": "obj",
             "in": "body",
+            "description": "Update and save DB product list for the Emergency Backpack",
             "schema": {
               "type": "object",
               "properties": {
-                "Content": {
-                  "example": "any"
+                "Name": {
+                  "type": "string",
+                  "example": "One Person"
                 },
-                "KitPrice": {
-                  "example": "any"
+                "Content": {
+                  "type": "object",
+                  "properties": {
+                    "product": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "Lot": {
+                            "type": "number",
+                            "example": 1
+                          },
+                          "Name": {
+                            "type": "string",
+                            "example": "Backpack"
+                          }
+                        },
+                        "required": [
+                          "Lot",
+                          "Name"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "product"
+                  ]
+                },
+                "TotalPrice": {
+                  "type": "number",
+                  "example": 538.75
                 }
-              }
+              },
+              "required": [
+                "Name",
+                "Content",
+                "TotalPrice"
+              ]
             }
           }
         ],
@@ -218,18 +380,72 @@
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Product Kits"
+        ],
+        "description": "Delete a product in the database.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "Delete the product in the DB of the emergency backpack.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Name": {
+                  "type": "string",
+                  "example": "One Person"
+                },
+                "Content": {
+                  "type": "object",
+                  "properties": {
+                    "product": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "Lot": {
+                            "type": "number",
+                            "example": 1
+                          },
+                          "Name": {
+                            "type": "string",
+                            "example": "Backpack"
+                          }
+                        },
+                        "required": [
+                          "Lot",
+                          "Name"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "product"
+                  ]
+                },
+                "TotalPrice": {
+                  "type": "number",
+                  "example": 538.75
+                }
+              },
+              "required": [
+                "Name",
+                "Content",
+                "TotalPrice"
+              ]
+            }
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
+          "200": {
+            "description": "OK"
           },
           "400": {
             "description": "Bad Request"

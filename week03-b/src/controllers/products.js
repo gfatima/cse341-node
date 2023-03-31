@@ -2,6 +2,9 @@ const db = require('../models')
 const Product = db.product
 
 module.exports.getAllProduct = (req, res) => {
+  /*  #swagger.description = 'Return a list of products for the Emergency Backpack.'
+      #swagger.tags = ['Products']
+  */
   try {
     Product.find({})
       .then((data) => {
@@ -18,6 +21,9 @@ module.exports.getAllProduct = (req, res) => {
 }
 
 module.exports.getSingleProduct = (req, res) => {
+  /*  #swagger.description = 'Return a specific of products for the Emergency Backpack.'
+      #swagger.tags = ['Products']
+  */
   try {
     const Name = req.params.Name
     Product.find({ Name })
@@ -35,6 +41,21 @@ module.exports.getSingleProduct = (req, res) => {
 }
 
 module.exports.createProduct = (req, res) => {
+  /*  #swagger.description = 'Create a product and store it in the database.'
+      #swagger.tags = ['Products']
+      #swagger.parameters['obj'] = {
+        in: 'body',
+        description: 'Create the product information for the emergency backpack and save them in the database.',
+        schema: {
+          $name: 'Paracetamol',
+          $price: 1.5,
+          $Count: '10 ct',
+          $Type: 'Tablet',
+          $Description: 'anti-pyratic',
+          $Category: 'Medicine'
+        }
+      }
+  */
   try {
     const product = new Product(req.body)
     product
@@ -54,42 +75,68 @@ module.exports.createProduct = (req, res) => {
 }
 
 module.exports.updateProduct = async (req, res) => {
-  const Name = req.params.Name
-  try {
-    Product.findOne({ Name }, function (_err, product) {
-      product.Name = req.params.Name
-      product.Price = req.body.Price
-      product.Count = req.body.Count
-      product.Type = req.body.Type
-      product.Description = req.body.Description
-      product.Category = req.body.Category
-      product.save(function (err) {
-        if (err) {
-          res.status(500).json(err || 'Some error occurred while updating the contact.')
-        } else {
-          res.status(204).send()
+  /*  #swagger.description = 'Update a product information and store it in the database.'
+      #swagger.tags = ['Products']
+      #swagger.parameters['obj'] = {
+        in: 'body',
+        description: 'Update and save DB product information for the Emergency Backpack.',
+        schema: {
+          $name: 'Paracetamol',
+          $price: 1.5,
+          $Count: '10 ct',
+          $Type: 'Tablet',
+          $Description: 'anti-pyratic',
+          $Category: 'Medicine'
         }
-      })
-    })
+      }
+  */
+  try {
+    const Name = req.params.Name
+    const product = {
+      Name: req.body.Name,
+      Price: req.body.Price,
+      Type: req.body.Type,
+      Count: req.body.Count,
+      Description: req.body.Description,
+      Category: req.body.Category
+    }
+    const response = await Product.replaceOne({ Name }, product)
+    console.log(response)
   } catch (err) {
-    res.status(500).json(err)
+    console.log(err)
+    res.status(500).json({
+      msg: err
+    })
   }
 }
 
 module.exports.deleteProduct = async (req, res) => {
+  /*  #swagger.description = 'Delete a product in the database.'
+      #swagger.tags = ['Products']
+      #swagger.parameters['obj'] = {
+        in: 'body',
+        description: 'Delete the product in the DB of the emergency backpack.',
+        schema: {
+          $name: 'Paracetamol',
+          $price: 1.5,
+          $Count: '10 ct',
+          $Type: 'Tablet',
+          $Description: 'anti-pyratic',
+          $Category: 'Medicine'
+        }
+      }
+  */
   try {
     const Name = req.params.Name
     if (!Name) {
       res.status(400).send({ message: 'Invalid productId Supplied' })
       return
     }
-    Product.deleteOne({ Name }, function (err, result) {
-      if (err) {
-        res.status(500).json(err || 'Some error occurred while deleting the contact.')
-      } else {
-        res.status(204).send(result)
-      }
-    })
+
+    const response = await Product.deleteOne({ Name })
+    if (response.deletedCount !== 0) {
+      res.status(200).send(Name + ' ' + 'has been deleted')
+    }
   } catch (err) {
     res.status(500).json(err || 'Some error occurred while deleting the contact.')
   }

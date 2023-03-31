@@ -8,7 +8,7 @@ GET http://localhost:8080/products
 ### Get kits by id
 GET http://localhost:8080/kit
 ### 
-GET http://localhost:8080/products/641d1eb0b2f7f6e188cd9b21
+GET http://localhost:8080/products/Ibuprofen
 ### 
 GET http://localhost:8080/kits/641d1f47b2f7f6e188ce4240
 ###
@@ -19,7 +19,7 @@ POST http://localhost:8080/products HTTP/1.1
 content-type:application/json
 
 {
-    "Name": "Gel Alcohol 180%",
+    "Name": "Gel",
     "Price": 7.77,
     "Type": "Fluid",
     "Count": "16 Fl Oz",
@@ -126,11 +126,11 @@ content-type:application/json
 
 
 ### PUT contact 
-PUT http://localhost:8080/products/642235c1b5360d9eeeba6375  HTTP/1.1
+PUT http://localhost:8080/products/Gel HTTP/1.1
 content-type: application/json
 
 {
-    "Name": "Gel Alcohol 70%",
+    "Name": "GelFluid",
     "Price": 3.77,
     "Type": "Fluid",
     "Count": "8 Fl Oz",
@@ -140,4 +140,4 @@ content-type: application/json
 
 ### DELETE contact 
 
-DELETE http://localhost:8080/products/642235c1b5360d9eeeba6375 HTTP/1.1
+DELETE http://localhost:8080/products/GelFluid HTTP/1.1
