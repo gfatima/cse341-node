@@ -26,9 +26,13 @@ module.exports.getSingleProduct = (req, res) => {
   */
   try {
     const Name = req.params.Name
+
     Product.find({ Name })
       .then((data) => {
         res.status(200).send(data)
+        if (!Name) {
+          res.status(400).send({ message: 'Invalid productId Supplied' })
+        }
       })
       .catch((err) => {
         res.status(500).send({
@@ -99,6 +103,9 @@ module.exports.updateProduct = async (req, res) => {
       Count: req.body.Count,
       Description: req.body.Description,
       Category: req.body.Category
+    }
+    if (!Name) {
+      res.status(400).send({ message: 'Invalid productId Supplied' })
     }
     const response = await Product.replaceOne({ Name }, product)
     console.log(response)

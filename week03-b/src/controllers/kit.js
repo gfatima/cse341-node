@@ -29,6 +29,9 @@ module.exports.getSingleKit = (req, res) => {
     Kit.find({ Name })
       .then((data) => {
         res.status(200).send(data)
+        if (!Name) {
+          res.status(400).send({ message: 'Invalid productId Supplied' })
+        }
       })
       .catch((err) => {
         res.status(500).send({
@@ -117,6 +120,7 @@ module.exports.updateKit = async (req, res) => {
       }
   */
   try {
+    const Name = req.params.Name
     const kit = {
       Name: req.body.Name,
       Content: {
@@ -208,6 +212,9 @@ module.exports.updateKit = async (req, res) => {
         ]
       },
       TotalPrice: req.body.TotalPrice
+    }
+    if (!Name) {
+      res.status(400).send({ message: 'Invalid productId Supplied' })
     }
     const response = await Kit.replaceOne(kit)
     console.log(response)
