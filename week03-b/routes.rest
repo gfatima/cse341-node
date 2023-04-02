@@ -33,7 +33,7 @@ content-type:application/json
 
 {
 	
-	"Name": "Four Person",
+	"Name": "FourPerson",
 	"Content": {
 		"products": [{
 				"Lot": 15,

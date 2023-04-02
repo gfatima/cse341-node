@@ -1,0 +1,10 @@
+p {
+  margin: 10px 0 !important;
+}
+
+.container {
+  background-color: rgb(93, 20, 202);
+  width: 55%;
+  margin: 15% auto;
+  text-align: center;
+}
