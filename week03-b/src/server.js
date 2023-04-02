@@ -1,7 +1,5 @@
-const path = require('path')
 const express = require('express')
 const bodyParser = require('body-parser')
-const morgan = require('morgan')
 const exphbs = require('express-handlebars')
 const passport = require('passport')
 const session = require('express-session')
