@@ -1,5 +1,7 @@
+const path = require('path')
 const express = require('express')
 const bodyParser = require('body-parser')
+const morgan = require('morgan')
 const exphbs = require('express-handlebars')
 const passport = require('passport')
 const session = require('express-session')
@@ -30,6 +32,9 @@ app.use(function (req, res, next) {
   res.locals.user = req.user || null
   next()
 })
+
+// Static folder
+app.use(express.static(path.join(__dirname, 'public')))
 
 app
   .use(bodyParser.json())
