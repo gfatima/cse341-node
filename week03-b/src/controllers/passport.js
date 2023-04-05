@@ -1,6 +1,7 @@
 const GoogleStrategy = require('passport-google-oauth20').Strategy
-const db = require('../models/User')
-const User = db.user
+const mongoose = require('mongoose')
+const User = require('../models/User')
+
 const dotenv = require('dotenv')
 dotenv.config()
 
@@ -41,7 +42,8 @@ module.exports = function (passport) {
     done(null, user.id)
   })
 
-  passport.deserializeUser((id, done) => {
-    User.findById(id, (err, user) => done(err, user))
+  passport.deserializeUser(async (id, done) => {
+    const user = await User.findById(id)
+    return done(null, user)
   })
 }

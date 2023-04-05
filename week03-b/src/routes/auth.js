@@ -13,6 +13,7 @@ router.get(
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {
     res.redirect('/dashboard')
+
   }
 )
 
@@ -21,6 +22,7 @@ router.get(
 router.get('/logout', (req, res, next) => {
   req.logout((error) => {
     if (error) { return next(error) }
+    
     res.redirect('/')
   })
 })
