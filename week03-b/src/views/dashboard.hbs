@@ -1,9 +1,42 @@
-<h6>Dashboard</h6>
-<h3>Welcome {{name}}</h3>
-<p>Here are your idea for Emergency Backpack </p>
-<div class="divider"></div>
-<div class="section">
-  <a href="/auth/logout" class="btn red darken-1">
-    <i class=""></i> Logout
-  </a>
-</div>
+  <h5 class="brown-text text-darken-2">Dashboard</h5>
+  <h3 class="teal-text text-darken-4">Welcome {{name}}</h3>
+  <p class="flow-text">Here you can see ideas for your emergency backpack</p>
+  <div class="divider"></div>
+  {{#if ideas}}
+  <table class="striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th>status</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each ideas}}
+      <tr>
+        <td><a href="/ideas/{{_id}}">{{title}}</a></td>
+        <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+        <td><span class="dash-status">{{status}}</span></td>
+        <td>
+          <a href="/ideas/edit/{{_id}}" class="btn btn-float">
+            <i class="fas fa-edit"></i>
+          </a>
+
+          <form action="/ideas/{{_id}}" method="POST" id="delete-form">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="btn red">
+              <i class="fas fa-trash"></i>
+            </button>
+          </form>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  {{else}}
+  <div class="divider"></div>
+  <p class="indigo-text text-darken-4">You have not created any idea</p>
+
+  {{/if}}

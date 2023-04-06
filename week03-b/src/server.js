@@ -38,18 +38,30 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'))
 }
 
+// Handlebars Helpers
+const {
+  formatDate,
+  stripTags,
+  truncate,
+  editIcon,
+  select,
+} = require('./helpers/hbs')
+
 // Handlebars
-app.engine('.hbs', exphbs.engine({ defaultLayout: 'main', extname: '.hbs' }))
+app.engine('.hbs',exphbs.engine({
+  helpers: { formatDate, stripTags, truncate, editIcon, select, }, defaultLayout: 'main', extname: '.hbs',
+})
+)
 app.set('view engine', '.hbs')
 
 // Sessions
 app.use
-(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: false,
-  store: new MongoStore({ mongooseConnection: mongoose.connection  })
-}))
+  (session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
+  }))
 
 
 // Passport middleware
@@ -74,6 +86,7 @@ app
   .use('/', require('./routes'))
 
 app.use('/auth', require('./routes/auth'))
+app.use('/ideas', require('./routes/idea'))
 
 const db = require('./models')
 db.mongoose

@@ -10,7 +10,7 @@ GET http://localhost:8080/kit
 ### 
 GET http://localhost:8080/products/Ibuprofen
 ### 
-GET http://localhost:8080/kits/641d1f47b2f7f6e188ce4240
+GET http://localhost:8080/kit/One-Person
 ###
 GET http://localhost:8080/products/641d20dbb2f7f6e188cfe2ee
 
@@ -28,102 +28,38 @@ content-type:application/json
 }
 
 ### Create kits 
-POST http://localhost:8080/kit HTTP/1.1
+POST http://localhost:8080/kit
 content-type:application/json
 
 {
-	
-	"Name": "FourPerson",
-	"Content": {
-		"products": [{
-				"Lot": 15,
-				"Name": "Paracetamol"
-			},
-			{
-				"Lot": 15,
-				"Name": "Ibuprofen"
-			},
-			{
-				"Lot": 6,
-				"Name": "Bandages Medical"
-			},
-			{
-				"Lot": 1,
-				"Name": "Isopropyl Alcohol 70%"
-			},
-			{
-				"Lot": 2,
-				"Name": "Diclofenac Gel 1%"
-			},
-			{
-				"Lot": 2,
-				"Name": "KN95 Face Masks"
-			},
-			{
-				"Lot": 4,
-				"Name": "Adhesive Tape Medical"
-			},
-			{
-				"Lot": 10,
-				"Name": "Canned tuna in oil"
-			},
-			{
-				"Lot": 6,
-				"Name": "Cookies"
-			},
-			{
-				"Lot": 4,
-				"Name": "Chocolates"
-			},
-			{
-				"Lot": 8,
-				"Name": "Legumes"
-			},
-			{
-				"Lot": 4,
-				"Name": "Warm Clothing"
-			},
-			{
-				"Lot": 4,
-				"Name": "Blankets"
-			},
-			{
-				"Lot": 4,
-				"Name": "Hat and Gloves Set"
-			},
-			{
-				"Lot": 4,
-				"Name": "Water bottles"
-			},
-			{
-				"Lot": 1,
-				"Name": "Battery Operated Radio"
-			},
-			{
-				"Lot": 1,
-				"Name": "Portable Charger"
-			},
-			{
-				"Lot": 2,
-				"Name": "Lanterns"
-			},
-			{
-				"Lot": 2,
-				"Name": "Wet Toilet Wipes"
-			},
-			{
-				"Lot": 2,
-				"Name": "Toilet Paper"
-			},
-			{
-				"Lot": 3,
-				"Name": "Backpack"
-			}
-		]
-	},
-	"KitPrice": 1749.17
+    "NameKit": "Four-Person",
+    "Content":[
+      {
+				"product1": "Paracetamol x 2u",
+				"product2": "Ibuprofen x 2u",
+				"product3": "Bandages Medical x 4u",
+				"product4": "Isopropyl Alcohol 70% x 1u",
+				"product5": "Diclofenac Gel 1% x 2u",
+				"product6": "KN95 Face Masks x 2u",
+				"product7": "Adhesive Tape Medical x 2u",
+				"product8": "Canned tuna in oil x 4u",
+				"product9": "Cookies x 4u",
+				"product10": "Chocolates x 4u",
+				"product11": "Legumes x 4u",
+				"product12": "Warm Clothing x 4u",
+				"product13": "Blankets x 4u",
+				"product14": "Hat and Gloves Set x 4u",
+				"product15": "Water bottles x 4u",
+				"product16": "Battery Operated Radio x 1u",
+				"product17": "Portable Charger x 2u",
+				"product18": "Lanterns x 2u",
+				"product19": "Wet Toilet Wipes x 2u",
+				"product20": "Toilet Paper x 4u",
+				"product21": "Backpack x 4u"
+        }
+      ],
+    "TotalPrice": 2538.75
 }
-
 
 ### PUT 
 PUT http://localhost:8080/products/Gel HTTP/1.1
@@ -142,4 +78,4 @@ content-type: application/json
 DELETE http://localhost:8080/products/GelFluid HTTP/1.1
 
 ### DELETE 
-DELETE http://localhost:8080/kit/FourPerson HTTP/1.1
+DELETE http://localhost:8080/kit/Four-Person HTTP/1.1

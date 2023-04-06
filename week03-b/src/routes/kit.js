@@ -5,12 +5,12 @@ const KitController = require('../controllers/kit')
 
 router.get('/', KitController.getAllKit)
 
-router.get('/:id', KitController.getSingleKit)
+router.get('/:NameKit', KitController.getSingleKit)
 
 router.post('/', KitController.createKit)
 
-router.put('/:id', KitController.updateKit)
+router.put('/:NameKit', KitController.updateKit)
 
-router.delete('/:id', KitController.deleteKit)
+router.delete('/:NameKit', KitController.deleteKit)
 
 module.exports = router

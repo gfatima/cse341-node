@@ -1,0 +1,24 @@
+{{#if ideas}}
+<table>
+    <h2><a href="/kit/{{NameKit}}">{{NameKit}}</a></h2>
+    <thead>
+        <tr>
+            <th>Name Product</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each ideas}}
+        <tr>
+            <td><a href="/kit/{{NameKit}}">{{{getSingleKit(NameKit)}}}</a></td>
+            <td></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+{{else}}
+<div class="divider"></div>
+<p class="indigo-text text-darken-4">You have not created any idea</p>
+
+{{/if}}

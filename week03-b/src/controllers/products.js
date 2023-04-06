@@ -3,7 +3,7 @@ const Product = db.product
 
 module.exports.getAllProduct = (req, res) => {
   /*  #swagger.description = 'Return a list of products for the Emergency Backpack.'
-      #swagger.tags = ['Products']
+      #swagger.tags = ['Product for the Emergency Backpack']
   */
   try {
     Product.find({})
@@ -22,7 +22,7 @@ module.exports.getAllProduct = (req, res) => {
 
 module.exports.getSingleProduct = (req, res) => {
   /*  #swagger.description = 'Return a specific of products for the Emergency Backpack.'
-      #swagger.tags = ['Products']
+      #swagger.tags = ['Product for the Emergency Backpack']
   */
   try {
     const Name = req.params.Name
@@ -46,7 +46,7 @@ module.exports.getSingleProduct = (req, res) => {
 
 module.exports.createProduct = (req, res) => {
   /*  #swagger.description = 'Create a product and store it in the database.'
-      #swagger.tags = ['Products']
+      #swagger.tags = ['Product for the Emergency Backpack']
       #swagger.parameters['obj'] = {
         in: 'body',
         description: 'Create the product information for the emergency backpack and save them in the database.',
@@ -80,7 +80,7 @@ module.exports.createProduct = (req, res) => {
 
 module.exports.updateProduct = async (req, res) => {
   /*  #swagger.description = 'Update a product information and store it in the database.'
-      #swagger.tags = ['Products']
+      #swagger.tags = ['Product for the Emergency Backpack']
       #swagger.parameters['obj'] = {
         in: 'body',
         description: 'Update and save DB product information for the Emergency Backpack.',
@@ -119,7 +119,7 @@ module.exports.updateProduct = async (req, res) => {
 
 module.exports.deleteProduct = async (req, res) => {
   /*  #swagger.description = 'Delete a product in the database.'
-      #swagger.tags = ['Products']
+      #swagger.tags = ['Product for the Emergency Backpack']
       #swagger.parameters['obj'] = {
         in: 'body',
         description: 'Delete the product in the DB of the emergency backpack.',
@@ -142,7 +142,7 @@ module.exports.deleteProduct = async (req, res) => {
 
     const response = await Product.deleteOne({ Name })
     if (response.deletedCount !== 0) {
-      res.status(200).send(Name + ' ' + 'has been deleted')
+      res.status(200).send( Name + ' ' + 'has been deleted')
     }
   } catch (err) {
     res.status(500).json(err || 'Some error occurred while deleting the contact.')

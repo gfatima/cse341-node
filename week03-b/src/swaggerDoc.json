@@ -4,6 +4,9 @@
   "info": {
     "title": "Emergency Backpack API",
     "description": "Suggestions for getting an emergency backpack.",
+    "contact": "Ivette Soto Valdivia",
+    "email": "fati_soto@byui.edu",
+    "url": "http://www.isotovaldivia.com",
     "version": "1.0.0"
   },
   "servers": [
@@ -16,11 +19,23 @@
   ],
   "tags": [
     {
-      "name": "Emergency Backpack"
+      "name": "Product for the Emergency Backpack",
+      "description": "Here is a list of essential products for an emergency backpack to be prepared for any natural or man-made disaster."
+    },
+    {
+      "name": "Kit of Products-Emergency Backpack, per number of persons",
+      "description": "Here is the quantity of products calculated by the number of people to obtain an emergency backpack."
     }
   ],
   "paths": {
     "/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/dashboard": {
       "get": {
         "description": "",
         "parameters": [],
@@ -37,7 +52,7 @@
     "/products/": {
       "get": {
         "tags": [
-          "Products"
+          "Product for the Emergency Backpack"
         ],
         "description": "Return a list of products for the Emergency Backpack.",
         "parameters": [],
@@ -52,7 +67,7 @@
       },
       "post": {
         "tags": [
-          "Products"
+          "Product for the Emergency Backpack"
         ],
         "description": "Create a product and store it in the database.",
         "parameters": [
@@ -112,7 +127,7 @@
     "/products/{Name}": {
       "get": {
         "tags": [
-          "Products"
+          "Product for the Emergency Backpack"
         ],
         "description": "Return a specific of products for the Emergency Backpack.",
         "parameters": [
@@ -137,7 +152,7 @@
       },
       "put": {
         "tags": [
-          "Products"
+          "Product for the Emergency Backpack"
         ],
         "description": "Update a product information and store it in the database.",
         "parameters": [
@@ -201,7 +216,7 @@
       },
       "delete": {
         "tags": [
-          "Products"
+          "Product for the Emergency Backpack"
         ],
         "description": "Delete a product in the database.",
         "parameters": [
@@ -270,7 +285,7 @@
     "/kit/": {
       "get": {
         "tags": [
-          "Product Kits"
+          "Kit of Products-Emergency Backpack, per number of persons"
         ],
         "description": "Return a Kit of products",
         "parameters": [],
@@ -285,7 +300,7 @@
       },
       "post": {
         "tags": [
-          "Product Kits"
+          "Kit of Products-Emergency Backpack, per number of persons"
         ],
         "description": "Creates a list of product and store it in the database.",
         "parameters": [
@@ -296,62 +311,126 @@
             "schema": {
               "type": "object",
               "properties": {
-                "Name": {
-                  "type": "string",
-                  "example": "One Person"
-                },
-                "Content": {
+                "OnePerson": {
                   "type": "object",
                   "properties": {
-                    "product": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "Lot": {
-                            "type": "number",
-                            "example": 2
-                          },
-                          "Name": {
-                            "type": "string",
-                            "example": "Bandages Medical"
-                          }
-                        },
-                        "required": [
-                          "Lot"
-                        ]
-                      }
+                    "NameKit": {
+                      "type": "string",
+                      "example": "One-Person"
+                    },
+                    "product1": {
+                      "type": "string",
+                      "example": "Paracetamol x 1u"
+                    },
+                    "product2": {
+                      "type": "string",
+                      "example": "Ibuprofen x 1u"
+                    },
+                    "product3": {
+                      "type": "string",
+                      "example": "Bandages Medical x 1u"
+                    },
+                    "product4": {
+                      "type": "string",
+                      "example": "Isopropyl Alcohol 70% x 1u"
+                    },
+                    "product5": {
+                      "type": "string",
+                      "example": "Diclofenac Gel 1% x 1u"
+                    },
+                    "product6": {
+                      "type": "string",
+                      "example": "KN95 Face Masks x 1u"
+                    },
+                    "product7": {
+                      "type": "string",
+                      "example": "Adhesive Tape Medical x 1u"
+                    },
+                    "product8": {
+                      "type": "string",
+                      "example": "Canned tuna in oil x 1u"
+                    },
+                    "product9": {
+                      "type": "string",
+                      "example": "Cookies x 1u"
+                    },
+                    "product10": {
+                      "type": "string",
+                      "example": "Chocolates x 1u"
+                    },
+                    "product11": {
+                      "type": "string",
+                      "example": "Legumes x 1u"
+                    },
+                    "product12": {
+                      "type": "string",
+                      "example": "Warm Clothing x 1u"
+                    },
+                    "product13": {
+                      "type": "string",
+                      "example": "Blankets x 1u"
+                    },
+                    "product14": {
+                      "type": "string",
+                      "example": "Hat and Gloves Set x 1u"
+                    },
+                    "product15": {
+                      "type": "string",
+                      "example": "Water bottles x 1u"
+                    },
+                    "product16": {
+                      "type": "string",
+                      "example": "Battery Operated Radio x 1u"
+                    },
+                    "product17": {
+                      "type": "string",
+                      "example": "Portable Charger x 1u"
+                    },
+                    "product18": {
+                      "type": "string",
+                      "example": "Lanterns x 1u"
+                    },
+                    "product19": {
+                      "type": "string",
+                      "example": "Wet Toilet Wipes x 1u"
+                    },
+                    "product20": {
+                      "type": "string",
+                      "example": "Toilet Paper x 1u"
+                    },
+                    "product21": {
+                      "type": "string",
+                      "example": "Backpack x 1u"
+                    },
+                    "TotalPrice": {
+                      "type": "number",
+                      "example": 538.75
                     }
-                  },
-                  "required": [
-                    "product"
-                  ]
-                },
-                "TotalPrice": {
-                  "type": "number",
-                  "example": 538.75
+                  }
                 }
-              },
-              "required": [
-                "Name",
-                "Content",
-                "TotalPrice"
-              ]
+              }
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     },
-    "/kit/{id}": {
+    "/kit/{NameKit}": {
       "get": {
         "tags": [
-          "Product Kits"
+          "Kit of Products-Emergency Backpack, per number of persons"
         ],
         "description": "Return a Specific Kit of products.",
         "parameters": [
           {
-            "name": "id",
+            "name": "NameKit",
             "in": "path",
             "required": true,
             "type": "string"
@@ -371,42 +450,125 @@
       },
       "put": {
         "tags": [
-          "Product Kits"
+          "Kit of Products-Emergency Backpack, per number of persons"
         ],
         "description": "Update a product list in the database Kits.",
         "parameters": [
           {
-            "name": "id",
+            "name": "NameKit",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "body",
+            "name": "obj",
             "in": "body",
+            "description": "Update and save DB product list for the Emergency Backpack",
             "schema": {
               "type": "object",
               "properties": {
-                "NameKit": {
-                  "example": "any"
-                },
-                "Lot": {
-                  "example": "any"
-                },
-                "Name": {
-                  "example": "any"
-                },
-                "TotalPrice": {
-                  "example": "any"
+                "OnePerson": {
+                  "type": "object",
+                  "properties": {
+                    "NameKit": {
+                      "type": "string",
+                      "example": "One-Person"
+                    },
+                    "product1": {
+                      "type": "string",
+                      "example": "Paracetamol x 1u"
+                    },
+                    "product2": {
+                      "type": "string",
+                      "example": "Ibuprofen x 1u"
+                    },
+                    "product3": {
+                      "type": "string",
+                      "example": "Bandages Medical x 1u"
+                    },
+                    "product4": {
+                      "type": "string",
+                      "example": "Isopropyl Alcohol 70% x 1u"
+                    },
+                    "product5": {
+                      "type": "string",
+                      "example": "Diclofenac Gel 1% x 1u"
+                    },
+                    "product6": {
+                      "type": "string",
+                      "example": "KN95 Face Masks x 1u"
+                    },
+                    "product7": {
+                      "type": "string",
+                      "example": "Adhesive Tape Medical x 1u"
+                    },
+                    "product8": {
+                      "type": "string",
+                      "example": "Canned tuna in oil x 1u"
+                    },
+                    "product9": {
+                      "type": "string",
+                      "example": "Cookies x 1u"
+                    },
+                    "product10": {
+                      "type": "string",
+                      "example": "Chocolates x 1u"
+                    },
+                    "product11": {
+                      "type": "string",
+                      "example": "Legumes x 1u"
+                    },
+                    "product12": {
+                      "type": "string",
+                      "example": "Warm Clothing x 1u"
+                    },
+                    "product13": {
+                      "type": "string",
+                      "example": "Blankets x 1u"
+                    },
+                    "product14": {
+                      "type": "string",
+                      "example": "Hat and Gloves Set x 1u"
+                    },
+                    "product15": {
+                      "type": "string",
+                      "example": "Water bottles x 1u"
+                    },
+                    "product16": {
+                      "type": "string",
+                      "example": "Battery Operated Radio x 1u"
+                    },
+                    "product17": {
+                      "type": "string",
+                      "example": "Portable Charger x 1u"
+                    },
+                    "product18": {
+                      "type": "string",
+                      "example": "Lanterns x 1u"
+                    },
+                    "product19": {
+                      "type": "string",
+                      "example": "Wet Toilet Wipes x 1u"
+                    },
+                    "product20": {
+                      "type": "string",
+                      "example": "Toilet Paper x 1u"
+                    },
+                    "product21": {
+                      "type": "string",
+                      "example": "Backpack x 1u"
+                    },
+                    "TotalPrice": {
+                      "type": "number",
+                      "example": 538.75
+                    }
+                  }
                 }
               }
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
-          },
           "400": {
             "description": "Bad Request"
           },
@@ -417,12 +579,12 @@
       },
       "delete": {
         "tags": [
-          "Product Kits"
+          "Kit of Products-Emergency Backpack, per number of persons"
         ],
         "description": "Delete a product in the database.",
         "parameters": [
           {
-            "name": "id",
+            "name": "NameKit",
             "in": "path",
             "required": true,
             "type": "string"

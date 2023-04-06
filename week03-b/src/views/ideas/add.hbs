@@ -1,0 +1,58 @@
+<h3 class="teal-text text-darken-4">Add Idea</h3>
+<div class="row">
+    <form action="/ideas" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="title" name="title">
+                <label for="title">Title</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <select id="status" name="status">
+                    <option value="public" selected>Public</option>
+                    <option value="private">Private</option>
+                </select>
+                <label for="status">Status</label>
+            </div>
+            <br>
+            <br>
+            <fieldset>
+                <legend class="teal-text text-darken-4" style="padding: 2%;">Select a Type of Kit per person in your Family:</legend>
+                <div>
+                    <p>
+                        <label>
+                            <input class="with-gap" name="optionKit" type="radio" value="One-Person" checked />
+                            <span class="teal-text text-darken-4">One-Person</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input class="with-gap" name="optionKit" type="radio" value="Two-Person" checked />
+                            <span class="teal-text text-darken-4">Two-Person</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input class="with-gap" name="optionKit" type="radio" value="Four-Person" checked />
+                            <span class="teal-text text-darken-4">Four-Person</span>
+                        </label>
+                    </p>
+                </div>
+            </fieldset>
+        </div>
+        <br>
+        <div class="divider"></div>
+        <div class="row">
+            <div class="input-field">
+                <h5 class="brown-text text-darken-2">Tell Us Your Idea:</h5>
+                <textarea id="body" name="body"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>
