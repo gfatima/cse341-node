@@ -1,4 +1,4 @@
-// const path = require('path')
+const path = require('path')
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
@@ -16,6 +16,7 @@ const app = express()
 
 // Passport 
 require('./controllers/passport')(passport)
+require('node-path')(module);
 
 // Body parser
 app.use(express.urlencoded({ extended: false }))
@@ -75,7 +76,7 @@ app.use(function (req, res, next) {
 })
 
 // Static folder
-// app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')))
 
 app
   .use(bodyParser.json())

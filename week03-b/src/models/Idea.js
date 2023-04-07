@@ -11,7 +11,7 @@ const IdeaSchema = new mongoose.Schema({
     default: 'public',
     enum: ['public', 'private'],
   },
-  optionKit: {
+  type_kit: {
     type: String,
     default: 'one-Person',
     enum: ['one-Person', 'two-Person', 'four-Person'],
