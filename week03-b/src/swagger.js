@@ -5,9 +5,11 @@ const doc = {
   info: {
     title: 'Emergency Backpack API',
     description: 'Suggestions for getting an emergency backpack.',
-    contact: 'Ivette Soto Valdivia',
-    email: 'fati_soto@byui.edu',
-    url: "http://www.isotovaldivia.com"
+    contact: {
+      name: 'Ivette Soto Valdivia',
+      email: 'fati_soto@byui.edu',
+      url: "http://www.isotovaldivia.com"
+    }
   },
   host: 'localhost:8080',
   basePath: '/',
